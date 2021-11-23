@@ -9,6 +9,7 @@ Note: Repositories sind schon länger nicht nur für Software-Entwicklung unabdi
 
 * das Konzept "Versionskontrolle" ist schon sehr alt, und viele Konzepte (aber auch Abweichungen!) sind historisch begründet
 * wie allgemein im SD: viele Ansätze und Best Practices lösen Probleme, die wir als Einsteiger:innen noch nie hatten
+* sehr viel Jargon
 * unklare Begrifflichkeiten
 
 
