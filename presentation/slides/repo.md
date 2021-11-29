@@ -7,9 +7,10 @@ Note: Die meisten werden mit Verzeichnisbäumen in Dateisystemen vertraut sein. 
 
 ### Repositories
 
-![](img/screenshot-git-init.png)
+<!-- ![](img/screenshot-git-init.png)
 
 ![](img/screenshot-git-init-after.png)
+-->
 
 Note: Wir fangen an mit einem Ordner, der einige Dateien enthält. Ist das schon ein Repo? Nee.
 Wir benutzen `git init`. Hat sich nichts geändert?? Doch! Es wurde der Ordner `.git/` erstellt.
@@ -37,7 +38,7 @@ Dateiverzeichnis und Repo sind unabhängig voneinander. Derzeit werden noch kein
 $ git add README.md source_code.py
 ```
 
-Note: Befinden sich die Dateien jetzt in unserem Repo? Naja, eigentlich immer noch nicht.
+Note: Befinden sich die Dateien jetzt in unserem Repo? Naja, mehr oder weniger.
 Wir haben sie nur vorgemerkt zum nächsten "Commit". Derzeit befinden sie sich in der Staging
 Area.
 
@@ -65,3 +66,12 @@ Scott Chacon & Ben Straub
 ### Repositories
 
 ![](img/reset-workflow.png)
+
+
+Small aside: `.gitignore` Datei
+
+```
+PERSONAL_NOTES.md
+*.pyc
+node_modules/
+```
