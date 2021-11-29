@@ -7,14 +7,9 @@ Note: Die meisten werden mit Verzeichnisbäumen in Dateisystemen vertraut sein. 
 
 ### Repositories
 
-<!-- ![](img/screenshot-git-init.png)
-
-![](img/screenshot-git-init-after.png)
--->
-
-Note: Wir fangen an mit einem Ordner, der einige Dateien enthält. Ist das schon ein Repo? Nee.
-Wir benutzen `git init`. Hat sich nichts geändert?? Doch! Es wurde der Ordner `.git/` erstellt.
-Er enthält weitere Ordner und Dateien – das ist das eigentliche Repository.
+Note: Erstellen wir uns einmal ein Git-Repo, so wie es viele vermutlich aus
+irgendwelchen Tutorials kennen. Zunächst noch im Schnelldurchlauf ohne 
+Erläuterungen.
 
 
 ```bash
@@ -23,34 +18,27 @@ README.md source_code.py
 $ git init
 $ ls
 README.md source_code.py
-$ ls -A
-.git/ README.md source_code.py
-$ ls .git/
-branches  config  description  HEAD  hooks  info 
- objects  refs
 ```
 
-Note: Fangfrage: Welche Dateien befinden sich in unserem Repo? Antwort: noch überhaupt keine.
-Dateiverzeichnis und Repo sind unabhängig voneinander. Derzeit werden noch keine Dateien getracked.
+Note: Wir fangen an mit einem Ordner, der einige Dateien enthält. Ist das schon ein Repo? Nee.
+Wir benutzen `git init`. Hat sich nichts geändert?? Welche Dateien befinden sich in unserem Repo?
+Antwort: noch überhaupt keine.
 
 
 ```bash
 $ git add README.md source_code.py
 ```
 
-Note: Befinden sich die Dateien jetzt in unserem Repo? Naja, mehr oder weniger.
-Wir haben sie nur vorgemerkt zum nächsten "Commit". Derzeit befinden sie sich in der Staging
-Area.
+Note: Jetzt aber: Welche Dateien befinden sich in unserem Repo? Antwort: immer noch keine.
 
 
 ```bash
 $ git commit
 ```
 
-Note: Das, was zuvor in der Staging Area war, bildet nun den ersten Commit. Ein Commit beschreibt den
-Unterschied zwischen dem was vorher war, und was nun ist. Alle Commits eines Repos bilden zusammen
-seine History, und damit auch den letztendlichen Zustand der Dateien im Repo. Ein Commit wird identifiziert
-entweder über den Abstand zum Status Quo (HEAD), oder durch einen eindeutigen Hash-Wert.
+Note: Puh. Ganz schön viel Aufwand. Warum tun wir uns so etwas an??
+Die Grundstruktur von Git mag an dieser Stelle komplex wirken, aber wir werden sehen, dass
+sie eine gigantische Funktionsvielfalt über ein recht elegantes Modell verwirklicht. 
 
 
 ### The Three Trees
@@ -58,20 +46,34 @@ entweder über den Abstand zum Status Quo (HEAD), oder durch einen eindeutigen H
 "Git \[is\] a content manager of three trees."
 Scott Chacon & Ben Straub
 
-* HEAD: the latest commit
-* Index: staging area, soon to be the next commit
-* Working Directory: sandbox; whatever I have done since my latest commit
+* **Working Directory**: Die Ordner und Dateien, an denen wir arbeiten. 
+* **HEAD**: Der gerade aktuellste 'snapshot' des *Working Directory*, der `git` bekannt ist.
+* **Index**: Auch *staging area* genannt; die vorgemerkten Änderungen, aus denen `git` den nächsten *HEAD* konstruieren wird.
+
+Note: Dieser HEAD, oder snapshot, von dem da die Rede ist, wird allgemein als Commit bezeichnet. Ein Commit fasst den kompletten Zustand
+eines Dateiverzeichnis zu einem bestimmten Zeitpunkt zusammen.
 
 
 ### Repositories
 
 ![](img/reset-workflow.png)
 
+Note: Die allermeisten `git` Befehle lassen sich so verstehen, dass sie in irgendeiner Form jeweils zwei dieser drei Bäume miteinander
+vergleichen oder synchronisieren. Schauen wir uns den obigen Prozess noch einmal an, aber diesmal detaillierter.
 
-Small aside: `.gitignore` Datei
 
-```
-PERSONAL_NOTES.md
-*.pyc
-node_modules/
+```bash
+# Am Anfang steht ein leeres Repo,
+# alle drei Bäume sind identisch.
+$ git init
+# Wir erstellen zwei neue Dateien.
+# Das Working Directory weicht nun ab!
+$ echo "# Documentation" > README.md
+$ echo "print('hello')" > source_code.py
+# Wir synchronisieren WD mit der Staging Area:
+$ git add README.md source_code.py
+# Wir synchronisieren SA mit dem HEAD:
+$ git commit
+# Alle drei Bäume sind nun wieder auf dem
+# gleichen Stand.
 ```

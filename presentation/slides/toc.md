@@ -1,6 +1,5 @@
 ### To-Do for today
 
-* (Sehr) kurze Einführung 
 * Grundbegriffe
   * Ordner, Repo, Staging-Bereich
   * Commits & Branches
