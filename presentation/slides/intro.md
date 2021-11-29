@@ -39,3 +39,4 @@ Was ist der Unterschied zwischen
 
 Note: Das sind alles übrigens weder rhetorische Fragen, noch Fangfragen.
 Ich bin überzeugt, dass eine Reihe von Verwirrungen im Umgang mit git daher stammen, dass Begrifflichkeiten und Konzepte im Alltag unklar verwendet werden.
+Die folgenden Erläuterungen werden weitgehend plattformunabhängig sein. Es wird in erster Linie um Konzepte gehen. Beispiele nutzen die CLI Befehle der Git Shell, außer wenn es konkret um Github geht. Viele graphische Git-Clients und Texteditoren stellen eine Untermenge dieser Funktionalität zur Verfügung, aber um diese zu verstehen brauchen wir das nötige Vokabular, und die CLI Befehle machen das klarer.
