@@ -46,4 +46,7 @@ dass Begrifflichkeiten und Konzepte im Alltag unklar verwendet werden.
 Note: Die folgenden Erläuterungen werden weitgehend plattformunabhängig sein. Es wird in erster Linie um Konzepte gehen.
 Beispiele nutzen die CLI Befehle der Git Shell, außer wenn es konkret um Github geht. Viele graphische Git-Clients
 und Texteditoren stellen eine Untermenge dieser Funktionalität zur Verfügung, aber um diese zu verstehen brauchen wir das
-nötige Vokabular, und die CLI Befehle machen das klarer.
+nötige Vokabular, und die CLI Befehle machen das klarer. 
+Außerdem ist der CLI Client von Git in den letzten Jahren sehr gut darin geworden, zu erklären, was gerade passiert und
+was die Optionen sind. Diese Erklärungen erfordern ein gewisses Grundverständnis – aber das erarbeiten wir uns ja gerade.
+Vielleicht ganz kurz: können wir einigermaßen CLI verstehen?

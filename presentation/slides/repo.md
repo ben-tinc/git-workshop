@@ -77,3 +77,10 @@ $ git commit
 # Alle drei Bäume sind nun wieder auf dem
 # gleichen Stand.
 ```
+
+
+Den aktuellen Zustand der drei Bäume liefert uns:
+
+```bash
+git status
+```
